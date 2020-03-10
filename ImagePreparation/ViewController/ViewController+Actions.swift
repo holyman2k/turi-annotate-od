@@ -49,9 +49,9 @@ extension ViewController {
         document?.save(self)
         let encoder = JSONEncoder()
         encoder.outputFormatting = .prettyPrinted
-        var dataSet = [Any]()
         
         // start new code to export data which works with CreateML
+        var dataSet = [Any]()
         impSet.annotations.annotations.enumerated().forEach{ (index, element) in
             var obj = [String: Any]()
             var annotations = [Any]()
@@ -75,7 +75,6 @@ extension ViewController {
         // end new code to export data which works with CreateML
         
 //        try? encoder.encode(impSet.annotations).write(to: FileHelper.annotationsUrl(workFolder: impSet.workFolder))
-//        try? encoder.encode(dataSet).write(to: FileHelper.annotationsUrl(workFolder: impSet.workFolder))
         
         var exportUrl = url.appendingPathComponent(AppConfiguration.mlExportDirName)
         var count = 2
